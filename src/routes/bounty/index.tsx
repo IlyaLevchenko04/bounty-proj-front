@@ -1,9 +1,10 @@
-import { createFileRoute } from '@tanstack/react-router'
+import { Bounties } from "@/features/Bounties";
+import { createFileRoute } from "@tanstack/react-router";
 
-export const Route = createFileRoute('/bounty/')({
+export const Route = createFileRoute("/bounty/")({
   component: RouteComponent,
-})
+});
 
 function RouteComponent() {
-  return <div>Hello "/bounty/"!</div>
+  return <Bounties />;
 }
