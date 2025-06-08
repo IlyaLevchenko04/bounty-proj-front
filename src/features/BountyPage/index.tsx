@@ -123,15 +123,9 @@ export const BountyPage = () => {
                     Posted By
                   </h3>
                   <p className="mt-1 text-lg text-gray-900">
-                    {bounty.postedBy.username}
-                  </p>
-                </div>
-                <div>
-                  <h3 className="text-sm font-medium text-gray-500">
-                    Posted Date
-                  </h3>
-                  <p className="mt-1 text-lg text-gray-900">
-                    {new Date(bounty.createdAt).toLocaleDateString()}
+                    {typeof bounty.postedBy === "string"
+                      ? bounty.postedBy
+                      : bounty.postedBy.username}
                   </p>
                 </div>
               </div>
