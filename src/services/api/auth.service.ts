@@ -3,7 +3,7 @@ import type { AuthFormData, AuthResponse } from "../../shared/schemas/auth";
 import { LocalStorageKeys } from "../../shared/constants/localStorageKeys";
 import { ENV } from "@/shared/constants/env";
 
-const getAuthHeader = () => {
+export const getAuthHeader = () => {
   const token = localStorage.getItem(LocalStorageKeys.ACCESS_TOKEN);
   return token ? { Authorization: `Bearer ${JSON.parse(token)}` } : {};
 };

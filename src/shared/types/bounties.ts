@@ -10,7 +10,7 @@ export interface Bounty {
   targetName: string;
   planet: string;
   reward: number;
-  status: "open" | "closed" | "in_progress";
+  status: "open" | "closed" | "in_progress" | "accepted";
   imageUrl: string;
   postedBy: User;
   createdAt: string;
