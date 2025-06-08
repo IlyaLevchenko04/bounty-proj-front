@@ -62,3 +62,19 @@ export const acceptBounty = async ({
     throw new Error("An unexpected error occurred");
   }
 };
+
+export const createBounty = async (
+  bountyData: Omit<Bounty, "_id" | "status">
+) => {
+  const response = await axios.post<Bounty>(
+    `${ENV.API_URL}/bounties`,
+    {
+      ...bountyData,
+      status: "open",
+    },
+    {
+      headers: getAuthHeader(),
+    }
+  );
+  return response.data;
+};
