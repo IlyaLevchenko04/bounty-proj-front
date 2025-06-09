@@ -1,6 +1,7 @@
 import { ENV } from "@/shared/constants/env";
 import type { Bounty } from "@/shared/types/bounties";
 import axios from "axios";
+
 import { getAuthHeader } from "./auth.service";
 
 export const getBounties = async (): Promise<Bounty[]> => {

@@ -1,4 +1,5 @@
 import type { Bounty } from "@/shared/types/bounties";
+
 import { Link } from "@tanstack/react-router";
 
 interface BountyCardProps {
@@ -22,7 +23,7 @@ export const BountyCard = ({ bounty }: BountyCardProps) => {
   return (
     <Link
       to={`/bounty/$bountyId`}
-      params={{ bountyId: bounty._id }}
+      params={{ bountyId: bounty._id || "" }}
       className="bg-white rounded-lg shadow-md p-4 hover:shadow-lg transition-shadow"
     >
       <div className="flex items-start justify-between">
