@@ -1,13 +1,15 @@
 import { LocalStorageKeys } from "@/shared/constants/localStorageKeys";
-import { Link } from "@tanstack/react-router";
+import { Link, useNavigate } from "@tanstack/react-router";
 import { useMemo, useState } from "react";
 
 export const Header = () => {
+  const navigate = useNavigate();
   const isUserLoggedIn = useMemo(
     () => !!localStorage.getItem(LocalStorageKeys.ACCESS_TOKEN),
     []
   );
   const [isOpen, setIsOpen] = useState(false);
+  if (!isUserLoggedIn) navigate({ to: "/auth/login" });
 
   const toggleBounty = () => {
     setIsOpen((p) => !p);
